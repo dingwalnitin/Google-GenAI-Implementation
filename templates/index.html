@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Text Generation App</title>
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e0f7fa; 
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        h1 {
+            color: #01579b; 
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        label {
+            font-size: 18px;
+            color: #009688; 
+        }
+
+        input[type="text"] {
+            width: 400px; 
+            padding: 10px;
+            border: 2px solid #009688;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button[type="submit"] {
+            background-color: #009688;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #00796b; 
+        }
+
+        h2 {
+            font-size: 24px;
+            color: #f57c00; 
+            margin-top: 20px;
+        }
+
+        p.generated-text {
+            font-size: 16px;
+            color: #333; 
+            text-align: left; 
+            max-width: 800px; 
+            margin: 0 auto; 
+            padding: 10px;
+            border: 2px solid #009688;
+            border-radius: 5px;
+            background-color: #fff; 
+            word-wrap: break-word; 
+        }
+
+        p.generated-text::before {
+            content: "Generated Text: ";
+            font-weight: bold;
+        }
+
+        p.time-taken {
+            font-size: 14px;
+            color: #777; 
+        }
+
+        p.unique-users {
+            font-size: 14px;
+            color: #777; 
+        }
+    </style>
+</head>
+<body>
+    <h1>Text Generation App</h1>
+    <form method="POST">
+        <label for="prompt">Enter a prompt:</label>
+        <input type="text" id="prompt" name="prompt" required>
+        <button type="submit">Generate Text</button>
+    </form>
+
+    {% if output %}
+    <h2>Generated Text:</h2>
+    <p class="generated-text">{{ output }}</p>
+    <p class="time-taken">Time taken: {{ elapsed_time }}s</p>
+    {% endif %}
+    <p class="unique-users">Number of unique users visited: {{ unique_visitors }}</p>
+
+</body>
+</html>

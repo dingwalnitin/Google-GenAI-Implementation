@@ -1,12 +1,13 @@
 from flask import Flask, request, render_template
 import google.generativeai as palm
 import time
-
+import os
 
 app = Flask(__name__)
 
 
-apikey= 'AIzaSyDpqKxMdAJYfn2_hmPTOkShkRzWJS0UBpQ'
+
+apikey = os.environ.get("API_KEY") 
 palm.configure(api_key=apikey)
 model_id = 'models/text-bison-001'
 

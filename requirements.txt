@@ -2,3 +2,4 @@ google-generativeai
 time
 flask
 gunicorn
+os
